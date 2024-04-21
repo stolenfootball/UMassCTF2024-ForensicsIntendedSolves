@@ -15,7 +15,7 @@ After reverse engineering the file, you'll find that the C2:
 - Uses a one time pad to derive a key
 - Decrypts the TCP stream data using RC4 with the key derived from the OTP
 
-If you do enough reversing, you come out to roughly the following:
+If you do enough reversing, you'll find that the TCP input is directly passed to the following function:
 
 ```c
 unsigned char *decrypt(char *ciphertext, int len){
